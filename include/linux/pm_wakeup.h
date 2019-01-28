@@ -53,10 +53,11 @@ struct wake_irq;
  */
 struct wakeup_source {
 	const char 		*name;
-	struct list_head	entry;
-	spinlock_t		lock;
+	struct list_head		entry;
+	struct rcu_head		rcu;
+	spinlock_t			lock;
 	struct wake_irq		*wakeirq;
-	struct timer_list	timer;
+	struct timer_list		timer;
 	unsigned long		timer_expires;
 	ktime_t total_time;
 	ktime_t max_time;
