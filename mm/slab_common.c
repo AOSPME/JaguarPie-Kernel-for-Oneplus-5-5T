@@ -25,7 +25,7 @@
 
 #include "slab.h"
 
-enum slab_state slab_state;
+enum slab_state slab_state __ro_after_init;
 LIST_HEAD(slab_caches);
 DEFINE_MUTEX(slab_mutex);
 struct kmem_cache *kmem_cache;
@@ -43,7 +43,7 @@ struct kmem_cache *kmem_cache;
  * Merge control. If this is set then no merging of slab caches will occur.
  * (Could be removed. This was introduced to pacify the merge skeptics.)
  */
-static int slab_nomerge;
+static bool slab_nomerge __ro_after_init;
 
 static int __init setup_slab_nomerge(char *str)
 {
