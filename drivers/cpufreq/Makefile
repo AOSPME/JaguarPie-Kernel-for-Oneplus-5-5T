@@ -7,6 +7,9 @@ obj-$(CONFIG_CPU_FREQ_STAT)             += cpufreq_stats.o
 # CPUfreq governors
 obj-$(CONFIG_CPU_FREQ_GOV_COMMON)		+= cpufreq_governor.o
 
+# Fingerprint Boost
+obj-$(CONFIG_FINGERPRINT_BOOST)		+= fp-boost.o
+
 obj-$(CONFIG_CPUFREQ_DT)		+= cpufreq-dt.o
 
 ##################################################################################
