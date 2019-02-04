@@ -529,11 +529,17 @@ extern struct cpufreq_governor cpufreq_gov_schedutil;
 #ifdef CONFIG_CPU_FREQ_DEFAULT_GOV_SCHEDUTIL
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_schedutil)
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_HELIX)
- extern struct cpufreq_governor cpufreq_gov_helix_schedutil;
- #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_helix_schedutil)
+extern struct cpufreq_governor cpufreq_gov_helix_schedutil;
+#define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_helix_schedutil)
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_PWRUTILX)
 extern struct cpufreq_governor cpufreq_gov_pwrutilx;
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_pwrutilx)
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_BLU_SCHEDUTIL)
+extern struct cpufreq_governor cpufreq_gov_blu_schedutil;
+#define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_blu_schedutil)
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_BLU_SCHEDALUCARD)
+extern struct cpufreq_governor cpufreq_gov_blu_schedalucard;
+#define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_blu_schedalucard)
 #endif
 
 static inline void cpufreq_policy_apply_limits(struct cpufreq_policy *policy)
