@@ -368,7 +368,7 @@ static void tcp_grow_window(struct sock *sk, const struct sk_buff *skb)
 	struct tcp_sock *tp = tcp_sk(sk);
 	int room;
 
-	room = min_t(int, tp->window_clamp, tcp_space(sk)) - tp->rcv_ssthresh
+	room = min_t(int, tp->window_clamp, tcp_space(sk)) - tp->rcv_ssthresh;
 
 	/* Check #1 */
 	if (room > 0 && !tcp_under_memory_pressure(sk)) {
